@@ -10,7 +10,7 @@ export class LocalStorageService {
     return JSON.parse(localStorage.getItem(key)) as T;
   }
 
-  public getList<T>(key: string) {
+  public getCatalog<T>(key: string) {
     const before = localStorage.getItem(key);
     return before ? (JSON.parse(before) as T[]) : [];
   }
