@@ -1,0 +1,55 @@
+@import '../../../assets/styles/variables.less';
+
+.page-content {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 390px;
+      max-height: 420px;
+      height: 60vh;
+      min-width: 300px;
+      max-width: 400px;
+      width: 30vw;
+      padding: 40px 30px 10px 30px;
+      border-radius: 8px;
+      background-color: gold;
+
+      img {
+         flex: 0 0 120px;
+         width: 120px;
+         height: 120px;
+         border-radius: 50%;
+      }
+
+      .title-wrapper {
+         flex: 1;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-evenly;
+         text-align: center;
+
+         .title-text {
+            font-size: 36px;
+            text-transform: capitalize;
+            font-family: serif;
+            color: @grey-text;
+         }
+      }
+
+      button {
+         margin-top: 15px;
+         width: 100%;
+      }
+
+      .copyright {
+         margin-top: 30px;
+         flex: 0 0 40px;
+      }
+   }
+
+}

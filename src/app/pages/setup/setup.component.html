@@ -1,0 +1,17 @@
+<div class="full-screen page-content">
+   <div class="wrapper">
+      <img src="../../../assets/images/landscape.png" alt="">
+      <div class="title-wrapper">
+         <span class="title-text">idle journal</span>
+      </div>
+
+      <input nz-input type="text" placeholder="enter your username" #usernameInput [(ngModel)]="username">
+      <button nz-button [nzType]="'primary'" (click)="completeSetup()" [disabled]="!usernameInput.value">
+         let's start
+      </button>
+      <div class="copyright">
+         copyright © 2020 yan liang
+      </div>
+
+   </div>
+</div>
