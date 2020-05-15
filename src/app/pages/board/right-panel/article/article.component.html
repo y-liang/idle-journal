@@ -1,0 +1,21 @@
+<nz-list *ngIf="article.length > 0" [nzDataSource]="articles" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+   <ng-template #item let-item>
+      <nz-list-item class="article-item" (click)="click(item._id)">
+         <nz-list-item-meta [nzTitle]="nzTitle">
+            <ng-template #nzTitle>
+               <label nz-checkbox (click)="$event.stopPropagation()" [(ngModel)]="item.completedFlag"
+                  (ngModelChange)="toggle(item._id)"></label>
+               <span [class.strike-through]="item.completedFlag">{{item.title}}</span>
+            </ng-template>
+
+
+
+         </nz-list-item-meta>
+      </nz-list-item>
+   </ng-template>
+</nz-list>
+
+<div class="quick-add">
+   <input nz-input #addInput placeholder="what would you like to jot down?"
+      (keydown.enter)="addArticle(addInput.value); addInput.value=''">
+</div>

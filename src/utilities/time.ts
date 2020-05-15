@@ -9,19 +9,19 @@ export const getTodayTime = (): number => {
    return floorToDate(new Date());
 };
 
-const floorToDate = (time: any): number => {
+export const floorToDate = (time: any): number => {
    const t = new Date(time);
    t.setHours(0, 0, 0, 0);
    return t.getTime();
 };
 
-const floorToMinute = (time: any): number => {
+export const floorToMinute = (time: any): number => {
    const t = new Date(time);
    t.setSeconds(0, 0);
    return t.getTime();
 };
 
-const lessThanADay = (later: number, earlier: number) => {
+export const lessThanADay = (later: number, earlier: number) => {
    return later - earlier < ONE_DAY;
 };
 

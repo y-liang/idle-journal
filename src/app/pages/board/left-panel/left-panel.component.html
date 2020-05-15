@@ -11,8 +11,9 @@
 </div>
 
 <div class="catalog-wrapper">
+   <app-catalog [isCollapsed]="isCollapsed"></app-catalog>
    <div class="add-catalog-btn-wrapper">
-      <button nz-button nzGhost nzType="dashed">
+      <button nz-button nzGhost nzType="dashed" (click)="openAddCatalogModal()">
          <i nz-icon nzType="plus" nzTheme="outline"></i>
          <span *ngIf="!isCollapsed">new catalog</span>
       </button>

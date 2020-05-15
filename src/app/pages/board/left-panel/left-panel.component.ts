@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 import { USERNAME } from 'src/app/services/local-storage/local-storage.namespace';
+import { CatalogComponent } from './catalog/catalog.component';
 
 @Component({
   selector: 'app-left-panel',
@@ -9,6 +10,7 @@ import { USERNAME } from 'src/app/services/local-storage/local-storage.namespace
 })
 export class LeftPanelComponent implements OnInit {
   @Input() isCollapsed: boolean;
+  @ViewChild(CatalogComponent, { static: true }) CatalogComponent: CatalogComponent;
 
   username: string;
 
@@ -16,6 +18,10 @@ export class LeftPanelComponent implements OnInit {
 
   ngOnInit() {
     this.username = this.store.get(USERNAME);
+  }
+
+  openAddCatalogModal(): void {
+    this.CatalogComponent.openAddCatalogModal();
   }
 
 }

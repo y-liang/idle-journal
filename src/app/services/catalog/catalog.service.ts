@@ -33,13 +33,13 @@ export class CatalogService {
     this.store.set(CATALOGS, this.catalogs);
   }
 
-  private getByUUID(uuid: string): Catalog {
-    return this.catalogs.find(item => item._id == uuid);
+  private getByUUID(uuid: string): Catalog | null {
+    return this.catalogs.find(item => item._id == uuid) || null;
   }
 
   private update(catalog: Catalog): void {
     const index = this.catalogs.findIndex(item => item._id == catalog._id);
-    if (index !== -1) { // maybe !== ???
+    if (index !== -1) {
       this.catalogs.splice(index, 1, catalog);
       this.broadcast();
       this.persist();
